@@ -650,7 +650,7 @@ function GBB.ParseMessage(msg,name,guid,channel)
 
 	local locClass,engClass,locRace,engRace,Gender,gName,gRealm = GetPlayerInfoByGUID(guid)
 
-	name=GBB.Tool.Split(name, "-")[1] -- remove GBB.ServerName
+	--name=GBB.Tool.Split(name, "-")[1] -- remove GBB.ServerName
 
 	if GBB.DB.RemoveRaidSymbols then
 		msg=string.gsub(msg,"{.-}","*")

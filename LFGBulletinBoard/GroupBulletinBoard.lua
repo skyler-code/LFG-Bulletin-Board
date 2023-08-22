@@ -680,11 +680,11 @@ local function Event_CHAT_MSG_SYSTEM(arg1)
 	end	
 end
 
-local function Event_CHAT_MSG_CHANNEL(msg,name,_3,_4,_5,_6,_7,channelID,channel,_10,_11,guid)
+local function Event_CHAT_MSG_CHANNEL(msg,name,_3,_4,nameWithServer,_6,_7,channelID,channel,_10,_11,guid)
 	if not GBB.Initalized then return end
 	--print("channel:"..tostring(channelID))
 	if GBB.DBChar and GBB.DBChar.channel and GBB.DBChar.channel[channelID] then
-		GBB.ParseMessage(msg,name,guid,channel)
+		GBB.ParseMessage(msg,nameWithServer,guid,channel)
 	end
 end
 
