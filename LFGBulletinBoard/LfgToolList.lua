@@ -214,7 +214,8 @@ function GBB.GetLfgList()
 end
 
 function GBB.UpdateLfgTool()
-    if LFGBrowseFrame.CategoryDropDown.selectedValue == 120 then return end
+	if not LFGBrowseFrame then return end
+    if LFGBrowseFrame and LFGBrowseFrame.CategoryDropDown.selectedValue == 120 then return end
     if  LFGBrowseFrame.CategoryDropDown.selectedValue == nil then  
         LFGBrowseFrame.CategoryDropDown.selectedValue = 2
     end
@@ -236,6 +237,7 @@ function GBB.UpdateLfgTool()
 end
 
 function GBB.UpdateLfgToolNoSearch()
+	if not LFGBrowseFrame then return end
     if LFGBrowseFrame.CategoryDropDown.selectedValue == 120 then return end
     if  LFGBrowseFrame.CategoryDropDown.selectedValue == nil then  
         LFGBrowseFrame.CategoryDropDown.selectedValue = 2
