@@ -235,7 +235,7 @@ end
 
 function GBB.BtnSettings(button )
 	if button == "LeftButton" then
-		GBB.Options.Open(2)
+		GBB.Options.Open(GBB.Title)
 	else
 		GBB.Popup_Minimap("cursor",false)
 		--GBB.Options.Open(1)

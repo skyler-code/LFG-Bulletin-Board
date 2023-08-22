@@ -652,6 +652,16 @@ function Options.AddSpace(factor)
 end
 
 function Options.Open(panel)
+	if type(panel) == "string" then
+		--Opening the frame needs to be run twice to avoid a bug.
+		InterfaceOptionsFrame_OpenToCategory(panel)
+		local min, max = InterfaceOptionsFrameAddOnsListScrollBar:GetMinMaxValues();
+		if (min < max) then
+			InterfaceOptionsFrameAddOnsListScrollBar:SetValue(math.floor(max/2));
+		end
+		InterfaceOptionsFrame_OpenToCategory(panel)
+		return
+	end
 	if panel==nil or panel > #Options.Panel then panel = 1 end
 	InterfaceOptionsFrame_OpenToCategory(Options.Panel[#Options.Panel])
 	InterfaceOptionsFrame_OpenToCategory(Options.Panel[#Options.Panel])
